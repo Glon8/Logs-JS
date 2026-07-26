@@ -1,5 +1,5 @@
 {
-  "name": "my-logs",
+  "name": "logs-js",
   "version": "1.0.0",
   "type": "module",
   "main": "src/logs.js"
