@@ -25,10 +25,14 @@ There are two ways to install **Logs-JS**:
 
 1. Download the **Logs-JS** files.
 2. Add `logs.js` to your project.
+3. Import logs functions to your project:
+```javascript
+import { log } from "./src/logs.js";
+```
 
 ### Option 2: NPM Installation
-```javascript
-import Logs from "./logs.js";
+```scss
+npm install git+https://github.com/Glon8/Logs-JS.git
 ```
 
 ## Project Status
