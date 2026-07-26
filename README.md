@@ -42,6 +42,7 @@ setDebug(true);  // Enable logs
 
 setProperties(true, true, false); 
 // Enable timestamps and paths, disable line references
+```
 
 ## Installation
 
