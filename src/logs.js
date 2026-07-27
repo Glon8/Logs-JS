@@ -22,7 +22,7 @@ export const setProperties = (timestamp, path, line) => {
 }
 
 const getTime = () => {
-   cosnt date = new Date();
+   const date = new Date();
 
    const time = String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0') + ':' String(now.getSeconds()).padStart(2,'0');
 
