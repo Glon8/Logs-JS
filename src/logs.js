@@ -43,7 +43,7 @@ const getInfo = () => {
    return {fileName: fileName, logLine: logLine};
 }
 
-export const log = (...args, type) => {
+export const log = (type, ...args) => {
    let logTime, logType, logPath, logLine;
 
    if(config.timestamp) logTime = '[' + getTime() + ']';
