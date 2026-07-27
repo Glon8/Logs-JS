@@ -16,7 +16,7 @@ export const setDebug = (state) => {
 }
 
 export const setProperties = (timestamp, path, line) => {
-   if(typeof timestamp == 'boolean') config.timestamp = time;
+   if(typeof timestamp == 'boolean') config.timestamp = timestamp;
    if(typeof path == 'boolean') config.path = path;
    if(typeof line == 'boolean') config.line = line;
 }
@@ -24,7 +24,7 @@ export const setProperties = (timestamp, path, line) => {
 const getTime = () => {
    const date = new Date();
 
-   const time = String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0') + ':' + String(now.getSeconds()).padStart(2,'0');
+   const time = String(date.getHours()).padStart(2,'0') + ':' + String(date.getMinutes()).padStart(2,'0') + ':' + String(date.getSeconds()).padStart(2,'0');
 
    return time;
 }
@@ -34,35 +34,39 @@ const getInfo = () => {
 
    const line = stack.split('\n')[2];
 
+   if(!stack) return { fileName: 'Failed', logLine: 'Failed'};
+
    const fileName = line.split('/').pop().split(':')[0];
 
    const match = line.match(/:(\d+):\d+\)?$/);
 
    const logLine = match ? match[1] : 'unknown';
 
-   return {fileName: fileName, logLine: logLine};
+   return {fileName, logLine};
 }
 
 export const log = (type, ...args) => {
-   let logTime, logType, logPath, logLine;
+   const modifiers = [];
 
-   if(config.timestamp) logTime = '[' + getTime() + ']';
+   if(config.timestamp) modifiers.push(`[${getTime()}]`);
    
    if (type == 'i' || type == 'w' || type == 'e') {
       // info | warning | error
-      if (type == 'i') logType = '[INFO] ';
-      else if (type == 'w') logType = '[WARNING] ';
-      else logType = '[ERROR] ';     
-   } 
-   else if(typeof type == 'string') logType = '[' + type + '] ';
+      if (type == 'i') modifiers.push(`[INFO]`);
+      else if (type == 'w') modifiers.push(`[WARNING]`);
+      else modifiers.push(`[ERROR]`);
+   }
+   else if (typeof type == 'string') modifiers.push(`[${type}]`); 
 
    if(config.path || config.line){
       const logInfo = getInfo();
 
-      if(config.path) logPath = '[' + logInfo.fileName + '] ';
-
-      if(config.line) logLine = '[ ' + logInfo.logLine + '] ';
+      if(config.path) modifiers.push(`[${logInfo.fileName}]`);
+      
+      if(config.line) modifiers.push(`[${logInfo.logLine}]`);
    }
-   
-   console.log(logTime, logType, logPath, logLine, ...args);
+
+   modifiers.push(...args);
+  
+   console.log(...modifiers)
 }
