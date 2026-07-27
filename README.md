@@ -54,7 +54,7 @@ There are two ways to install **Logs-JS**:
 2. Add `logs.js` to your project.
 
 ### Option 2: NPM Installation
-```javascript
+```
 npm install git+https://github.com/Glon8/Logs-JS.git
 ```
 
