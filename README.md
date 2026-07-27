@@ -25,7 +25,7 @@ The library provides four functions for creating logs and controlling logging be
 
 | Function | Description |
 |----------|-------------|
-| `log(...args, type)` | Prints a log entry with the provided arguments and assigns a log type tag. Available types: `i` (info), `w` (warning), `e` (error). |
+| `log(...args, tag)` | Prints a log entry with the provided arguments and assigns a log tag. Supports custom tags and already available tags: `i` (info), `w` (warning), `e` (error). |
 | `debugOff()` | Disables all log output. |
 | `setDebug(state)` | Manually enables or disables logs. Accepts a boolean value (`true` to enable, `false` to disable). |
 | `setProperties(timestamp, path, line)` | Controls additional log information. Each parameter accepts a boolean value to enable or disable timestamps, file/directory paths, and source line references. |

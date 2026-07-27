@@ -45,18 +45,18 @@ const getInfo = () => {
    return {fileName, logLine};
 }
 
-export const log = (type, ...args) => {
+export const log = (tag, ...args) => {
    const modifiers = [];
 
    if(config.timestamp) modifiers.push(`[${getTime()}]`);
    
-   if (type == 'i' || type == 'w' || type == 'e') {
+   if (tag == 'i' || tag == 'w' || tag == 'e') {
       // info | warning | error
-      if (type == 'i') modifiers.push(`[INFO]`);
-      else if (type == 'w') modifiers.push(`[WARNING]`);
+      if (tag === 'i') modifiers.push(`[INFO]`);
+      else if (tag === 'w') modifiers.push(`[WARNING]`);
       else modifiers.push(`[ERROR]`);
    }
-   else if (typeof type == 'string') modifiers.push(`[${type}]`); 
+   else if (typeof tag == 'string') modifiers.push(`[${type}]`); 
 
    if(config.path || config.line){
       const logInfo = getInfo();
