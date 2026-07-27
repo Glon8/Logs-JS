@@ -11,7 +11,7 @@ export const debugOff = () => {
 }
 
 export const setDebug = (state) => {
-   if(typeqof state != 'boolean') return; 
+   if(typeof state != 'boolean') return; 
    debug = state;
 }
 
@@ -53,7 +53,8 @@ export const log = (...args, type) => {
       if (type == 'i') logType = '[INFO] ';
       else if (type == 'w') logType = '[WARNING] ';
       else logType = '[ERROR] ';     
-   };
+   } 
+   else if(typeof type == 'string') logType = '[' + type + '] ';
 
    if(config.path || config.line){
       const logInfo = getInfo();
