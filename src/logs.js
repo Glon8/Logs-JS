@@ -6,7 +6,7 @@ const config = {
    line: true,
 };
 
-export const debugOff = () = {
+export const debugOff = () => {
    debug = false;
 }
 
