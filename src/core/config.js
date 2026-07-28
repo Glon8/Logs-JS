@@ -1,6 +1,6 @@
-let debug = true;
+export let debug = true;
 
-const config = {
+export const config = {
    timestamp: true,
    path: true,
    line: true,

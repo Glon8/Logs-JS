@@ -1,4 +1,4 @@
-const getTime = () => {
+export const getTime = () => {
    const date = new Date();
  
    const time = `${String(date.getHours()).padStart(2,'0')} :  
@@ -8,7 +8,7 @@ const getTime = () => {
    return time;
 }
 
-const getInfo = () => {
+export const getInfo = () => {
    const stack = new Error().stack;
 
    const line = stack.split('\n')[2];
