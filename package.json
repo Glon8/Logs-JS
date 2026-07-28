@@ -2,5 +2,5 @@
   "name": "logs-js",
   "version": "1.0.0",
   "type": "module",
-  "main": "src/logs.js"
+  "main": "src/index.js"
 }
