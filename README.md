@@ -28,7 +28,7 @@ The library provides four functions for creating logs and controlling logging be
 | `log(...args)` | Prints a log entry with the provided arguments. Accepts a regular log values and a custom format of Object, with tag and data fields. Supports custom tags and includes build in tags: `i` (info), `w` (warning), `e` (error). |
 | `debugOff()` | Disables all log output. |
 | `setDebug(state)` | Manually enables or disables logs. Accepts a boolean value (`true` to enable, `false` to disable). |
-| `setProperties(settings)` | Controls additional log information by a object that include three parameters. Each parameter accepts a boolean value to enable or disable timestamp, path - file/directory paths, and line - source line references. |
+| `setProperties(settings)` | Controls additional log information using an object that includes three parameters. Each parameter accepts a boolean value to enable or disable timestamp, path - file name, and line - source line references. |
 
 ### Examples
 
@@ -59,9 +59,15 @@ npm install git+https://github.com/Glon8/Logs-JS.git
 
 Import logs functions to your project:
 ```javascript
-import { log } from "./src/logs.js";
+import Log from "./src/logs.js";
+```
+
+or
+
+```javascript
+import {log, debugOff, setDebug, setConfig} from "./src/logs.js";
 ```
 
 ## Project Status
 
-🚧 **In Progress**
+🏁 Project Finished
