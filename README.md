@@ -60,13 +60,13 @@ npm install git+https://github.com/Glon8/Logs-JS.git
 
 Import logs functions to your project:
 ```javascript
-import Log from "./src/logs.js";
+import Log from "logs-js";
 ```
 
 or
 
 ```javascript
-import {log, debugOff, setDebug, setConfig} from "./src/logs.js";
+import {log, debugOff, setDebug, setConfig} from "logs-js";
 ```
 
 ## Project Status
