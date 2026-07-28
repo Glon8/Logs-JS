@@ -35,6 +35,7 @@ The library provides four functions for creating logs and controlling logging be
 ```javascript
 log("Application started");
 log({data: "Low memory warning", tag: "w"});
+log({data: "Yet another example", tag: "Custom Tag"});
 
 debugOff(); // Disable logs
 setDebug(true);  // Enable logs
