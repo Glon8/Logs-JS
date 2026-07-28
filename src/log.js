@@ -1,4 +1,4 @@
-import { debug, config } from './core/settings.js';
+import { debug, config } from './core/config.js';
 import { getTime, getInfo } from './core/helpers.js';
 
 export const log = (...args) => {

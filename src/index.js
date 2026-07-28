@@ -1,4 +1,4 @@
-import { debugOff, setDebug, setConfig } from './config.js';
+import { debugOff, setDebug, setConfig } from './core/config.js';
 import { log } from './log.js';
 
 export {log, debugOff, setDebug, setConfig};

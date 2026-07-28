@@ -1,5 +1,11 @@
-import { debug, config } from './core/settings.js'
+let debug = true;
 
+const config = {
+   timestamp: true,
+   path: true,
+   line: true,
+};
+ 
 export const debugOff = () => {
    debug = false;
 }
