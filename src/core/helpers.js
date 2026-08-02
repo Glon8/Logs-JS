@@ -1,9 +1,7 @@
 export const getTime = () => {
    const date = new Date();
  
-   const time = `${String(date.getHours()).padStart(2,'0')} :  
-   ${String(date.getMinutes()).padStart(2, '0')} : 
-   ${String(date.getSeconds()).padStart(2, '0')}`;
+   const time = `${String(date.getHours()).padStart(2,'0')} : ${String(date.getMinutes()).padStart(2, '0')} : ${String(date.getSeconds()).padStart(2, '0')}`;
  
    return time;
 }
