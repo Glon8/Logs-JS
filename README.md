@@ -28,7 +28,7 @@ The library provides four functions for creating logs and controlling logging be
 | `log(...args)` | Prints a log entry with the provided arguments. Accepts a regular log values and a custom format of Object, with tag and data fields. Supports custom tags and includes build in tags: `i` (info), `w` (warning), `e` (error). |
 | `debugOff()` | Disables all log output. |
 | `setDebug(state)` | Manually enables or disables logs. Accepts a boolean value (`true` to enable, `false` to disable). |
-| `setProperties(settings)` | Controls additional log information using an object that includes three parameters. Each parameter accepts a boolean value to enable or disable timestamp, path - file name, and line - source line references. |
+| `setConfig(settings)` | Controls additional log information using an object that includes three parameters. Each parameter accepts a boolean value to enable or disable timestamp, path - file name, and line - source line references. |
 
 ### Examples
 
@@ -40,7 +40,7 @@ log({data: "Yet another example", tag: "Custom Tag"});
 debugOff(); // Disable logs
 setDebug(true);  // Enable logs
 
-setProperties({ timestamp: true, path: true, line: false}); 
+setConfig({ timestamp: true, path: true, line: false}); 
 // Enable timestamps and paths, disable line references
 ```
 
