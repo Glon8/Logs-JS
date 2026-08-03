@@ -9,7 +9,9 @@ export const getTime = () => {
 export const getInfo = () => {
    const stack = new Error().stack;
 
-   const line = stack.split('\n')[2];
+   //const line = stack.split('\n')[2];
+
+   const line = stack.split('\n');
 
    if (!stack) return { fileName: 'Failed', logLine: 'Failed' };
 
