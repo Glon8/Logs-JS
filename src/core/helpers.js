@@ -27,7 +27,8 @@ export const getInfo = () => {
 
    const body = line.split('/').pop();
 
-   const fileName = body.split(':')[0].split('?')[0];
+   const fileName = stack;
+   //const fileName = body.split(':')[0].split('?')[0];
 
    const logLine = body.split(':')[1];
 
