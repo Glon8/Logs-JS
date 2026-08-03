@@ -9,26 +9,15 @@ export const getTime = () => {
 export const getInfo = () => {
    const stack = new Error().stack;
 
-   /*if (!stack) return { fileName: 'Failed', logLine: 'Failed' };
-
-   const line = stack.split('\n')[2];
-
-   const fileName = line.split('/').pop().split(':')[0];
-
-   const match = line.match(/:(\d+):\d+\)?$/);
-
-   const logLine = match ? match[1] : 'unknown';*/
-
    if (!stack) return { fileName: 'Failed', logLine: 'Failed' };
 
-   const line = stack.split('\n')[2];
+   const line = stack.split('\n')[3];
 
    if (!line) return { fileName: 'Failed', logLine: 'Failed' };
 
    const body = line.split('/').pop();
 
-   const fileName = stack;
-   //const fileName = body.split(':')[0].split('?')[0];
+   const fileName = body.split(':')[0].split('?')[0];
 
    const logLine = body.split(':')[1];
 
