@@ -15,12 +15,10 @@ export const log = (...args) => {
 
       if (config.timestamp) modifiers.push(`[${getTime()}]`);
 
-      if (tag == 'i' || tag == 'w' || tag == 'e') {
-         // info | warning | error
-         if (tag === 'i') modifiers.push(`[INFO]`);
-         else if (tag === 'w') modifiers.push(`[WARNING]`);
-         else modifiers.push(`[ERROR]`);
-      }
+      // info | warning | error
+      if (tag === 'i') modifiers.push(`[INFO]`);
+      else if (tag === 'w') modifiers.push(`[WARNING]`);
+      else if (tag === 'e') modifiers.push(`[ERROR]`);
       else if (typeof tag == 'string') modifiers.push(`[${tag}]`);
 
       if (config.path || config.line) {
