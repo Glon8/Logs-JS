@@ -69,6 +69,10 @@ or
 import {log, debugOff, setDebug, setConfig} from "logs-js";
 ```
 
+## Known Issues:
+
+1. Wrong line displayed.
+
 ## Project Status
 
 🏁 Project Finished
